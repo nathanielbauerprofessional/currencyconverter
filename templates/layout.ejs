@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || "Currency Converter" %></title><!-- Include your CSS -->
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/"><%= __("home") %></a></li>
+        <li><a href="/cc"><%= __("convert") %></a></li>
+        <% if (user) { %>
+          <li><a href="/logout"><%= __("logout") %></a></li>
+          <% if (user.admin) { %>
+            <li><a href="/admin"><%= __("admin_panel") %></a></li>
+          <% } %>
+        <% } else { %>
+          <li><a href="/login"><%= __("login") %></a></li>
+          <li><a href="/register"><%= __("register") %></a></li>
+        <% } %>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <%- body %> <!-- Inject the content of specific pages here -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <%= new Date().getFullYear() %> Currency Converter</p>
+  </footer>
+</body>
+</html>

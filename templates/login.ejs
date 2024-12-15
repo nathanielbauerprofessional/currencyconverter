@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title><%= __("login") %></title>
+</head>
+
+<body>
+    <h1 class = "text-black text-sm"><%= __("login") %></h1>
+    <form action="http://localhost:<%= port %>/login" method="post">
+        <label><%= __("username") %>: <input type="text" name="username" id = "username" required/></label>
+
+        <label><%= __("password") %>:
+            <input type="password" name="password" id = "password" required/>
+        </label>
+        <input type="reset"/>
+        <input type="submit" value="Login"/>
+        <br>
+        <p><%= __("noaccount") %></p>
+        <a href = "/register"><%= __("register") %></a>
+        <br>
+        <h3 id = "errorMessage" ><%- error %></h3>
+    </form>
+</body>
+
+</html>

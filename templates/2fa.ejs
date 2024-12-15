@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= __("twofa") %></title>
+  </head>
+  <body>
+    <h1><%= __("twofa") %></h1>
+    <p><%= __("entercodemessage") %></p>
+    <form method="POST" action="/2fa">
+      <input type="text" name="token" placeholder="Enter OTP" required />
+      <button type="submit"><%= __("verify") %></button>
+    </form>
+    <p style="color: red;"><%= error %></p>
+  </body>
+</html>

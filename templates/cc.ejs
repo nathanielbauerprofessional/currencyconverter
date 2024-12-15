@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title><%= __("convert") %></title>
+</head>
+
+<body>
+    <h1><%= __("convert") %></h1>
+    <form action="http://localhost:<%= port %>/cc" method="post">
+        <label><%= __("amount") %>: <input type="number" name="amount"/></label>
+
+        <label><%= __("fromcurrency") %>:
+            <input type="text" name="fromCurrency" list="availCurrenciesOne" placeholder="Select currency"/>
+        </label>
+        
+        <label><%= __("tocurrency") %>:
+            <input type="text" name="toCurrency" list="availCurrenciesTwo" placeholder="Select currency"/>
+        </label>
+        
+        <datalist id="availCurrenciesOne">
+            <%- availCurrencyDataList %>
+        </datalist>
+        
+        <datalist id="availCurrenciesTwo">
+            <option value = "All"></option>
+            <%- availCurrencyDataList %>
+        </datalist>
+
+        <label id = "dateLabel"> <%= __("date") %>:
+            <input type = "date" name = "date" id = "date"/>
+        </label>
+        <label for="today"><%= __("todaysdate") %></label>
+        <input type="checkbox" id="today" name="today" />
+
+
+        <input type="reset"/>
+        <input type="submit" value="Convert"/>
+    </form>
+    <a href = "./home"><%= __("home") %></a>
+
+    <script>
+        const dateInput = document.getElementById("date");
+        const dateLabel = document.getElementById("dateLabel")
+        const useTodayCheckbox = document.getElementById("today");
+
+        useTodayCheckbox.addEventListener('change',function () {
+            if (this.checked){
+                dateInput.hidden = true;
+                dateInput.disabled = true;
+                dateLabel.hidden = true;
+            } else {
+                dateInput.hidden = false;
+                dateInput.disabled = false;
+                dateLabel.hidden = false;
+            }
+        });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= __("admin_panel") %></title>
+</head>
+<body>
+  <h1><%= __("adminpanelgreeting") %>, <%= username %>!</h1>
+  <ul>
+    <li><a href="/admin/users"><%= __("manageusers") %></a></li>
+    <li><a href="/admin/settings"><%= __("settings") %></a></li>
+    <form action="/logout" method="POST">
+        <button type="submit"><%= __("logout") %></button>
+      </form>
+  </ul>
+</body>
+</html>
