@@ -1,0 +1,45 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }  
+
+#leftHalfHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    gap:8px;
+}
+
+#rightHalfHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    gap: 24px;
+}
+
+#headerMainDiv{
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(to right, #0800ff, #00d9ff);
+}
+#headerTitle{
+    font-size: 20px;
+    color: white;
+    font-family: "Geist";
+}
+
+a{
+    font-size: 20px;
+    color: white;
+    font-family: "Geist";
+    text-decoration: none;
+}
+
+a:hover{
+    font-size: 25px;
+    color: rgb(45, 44, 44);
+}
